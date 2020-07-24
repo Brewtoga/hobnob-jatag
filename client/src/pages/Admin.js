@@ -72,6 +72,10 @@ function Admin() {
     };
 
     const postNewMenuItem = () => {
+      const newMenutItem = {menuItemName, MenuType, isSpecial,
+        image, ingredients
+      }
+
 
     };
 
