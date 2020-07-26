@@ -7,7 +7,6 @@ import OrderItem from "../OrderItem";
 import Logo from "../Logo";
 import { Button, Card, variant, Alert } from "react-bootstrap";
 import ReactDOM from "react-dom";
-// import OrderItem from "../OrderItem/OrderItem";
 
 class orders extends React.Component {
   constructor(props) {
@@ -22,10 +21,11 @@ class orders extends React.Component {
       orderDetail: [],
       display: false,
       curTime: new Date().toLocaleString(),
+      exits:false,
     };
   }
 
-  //////////////////////////////////////////////////////////////
+  /////////////////////////////////  Starting /////////////////////////////
   componentDidMount = () => {
     this.getMenus();
   };
@@ -48,8 +48,7 @@ class orders extends React.Component {
       const menulist = { order }.order;
       return (
         <Card style={{ width: "18rem" }}>
-          {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-          <Card.Body>
+             <Card.Body>
             <Card.Title>HobNob Menu</Card.Title>
             <Card.Text>
               <div className="menuItem"> key={index}</div>
@@ -66,17 +65,7 @@ class orders extends React.Component {
             </Button>
           </Card.Body>
         </Card>
-        // <div>
-        //   {/* <div className="card"> */}
-
-        //   <button
-        //     name="btn"
-        //     key={menulist._id}
-        //     onClick={(event) => this.addItem(event, menulist)}
-        //   >
-        //     add
-        //   </button>
-        // </div>
+     
       );
     });
   };
@@ -194,8 +183,6 @@ class orders extends React.Component {
     return items.map((order, index) => {
       if (!items.length) return null;
       const menulist = { order }.order;
-      // const price= parseInt(menulist.price)
-
       const price = menulist.price;
       const menuItemName = menulist.menuItemName;
       const ingredients = menulist.ingredients;
@@ -333,11 +320,33 @@ class orders extends React.Component {
   }
     
   };
- 
+ ////////////////////////
+ exists=()=>{
+  
+//  e.preventDefault()
+ this.setState({exits:true}) 
+ alert("Thank You")
+//  return null; 
+ return   <h1> Thank You</h1>
+  
+ }
 
   /////////////// render function    /////////////////////////////////////////////////
   render() {
     console.log("state:", this.state.cart);
+  //   if (this.state.exits !== false)
+  //   {
+  
+  //    return(
+  //     <>
+  //       <Logo />
+  //         <div>
+  //         {this.exists()}
+  //         </div>
+  //     </>
+  //   )
+     
+  // }
     if (this.state.cart.length === 0) {
       return (
         <>
@@ -348,25 +357,21 @@ class orders extends React.Component {
         </>
       );
     }
-
-    if (this.state.display !== true) {
+ 
+  else if (this.state.display !== true) {
       return (
         <>
           <div>
             <Logo />
             <div className="blog">{this.displaymenus(this.state.menus)}</div>
           </div>
-          {/* {this.state.showOrderDetail ? (
-          <OrderDetail report={this.state.finalOrder} />
-        ) : null} */}
-
           <div className="display">
             {this.displaychoosedmenu(this.state.cart)}
           </div>
           <div className="result">
             {this.handleOrderDetails(this.state.cart)}
           </div>
-          {/* <OrderDetail cart={this.state.cart} /> */}
+          
         </>
       );
     }
@@ -380,10 +385,15 @@ class orders extends React.Component {
           {this.displayReceipt(this.state.cart)}
           {this.displayPrice()}
          
-          <section><button name="email"> Email</button> </section>
-        </div>
+          <section><button name="email" onClick={(e)=>{this.exists(e)}}> Email</button> </section>
+          </div>
+       
       </>
     );
   }
+   
+  
+ 
+  
 }
 export default orders;
