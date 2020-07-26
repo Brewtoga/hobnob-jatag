@@ -86,3 +86,12 @@
   /* border-width: 2px; */
   /* border-color: white; */
 }
+
+/* Item with Button */
+.description-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 370px;
+  /* background-color: palegreen; */
+}
