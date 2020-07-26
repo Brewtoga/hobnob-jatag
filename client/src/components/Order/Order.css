@@ -76,14 +76,6 @@
 .receipt {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* background-color: maroon; */
-}
-
-.receipt-head {
-  display: flex;
-  /* background-color: mediumaquamarine; */
-  text-align: center;
 }
 
 .container-checkout-receipt {

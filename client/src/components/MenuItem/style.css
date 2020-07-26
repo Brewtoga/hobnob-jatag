@@ -25,6 +25,14 @@
   /* background-color: mediumseagreen; */
 }
 
+.description-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 370px;
+  /* background-color: palegreen; */
+}
+
 .description-field {
   width: 290px;
   /* background-color: mediumvioletred; */
@@ -34,4 +42,9 @@
   width: 290px;
   display: inline;
   /* background-color: olive; */
+}
+
+.card {
+  display: flex;
+  /* background-color: orange; */
 }

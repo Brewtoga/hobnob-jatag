@@ -57,19 +57,22 @@ class orders extends React.Component {
               </Card.Title>
               <Card.Title className="menu-price">{menulist.price}</Card.Title>
             </div>
-            <div className="description-field">
-              <Card.Text className="menu-description">
-                {menulist.ingredients}
-              </Card.Text>
+            <div className="description-container">
+              <div className="description-field">
+                <Card.Text className="menu-description">
+                  {menulist.ingredients}
+                </Card.Text>
+              </div>
+              {/* <div className="menuItem"> key={index}</div> */}
+              <Button
+                style={{ width: "60px", height: "48px" }}
+                variant="info"
+                key={menulist._id}
+                onClick={(event) => this.addItem(event, menulist)}
+              >
+                Add
+              </Button>
             </div>
-            {/* <div className="menuItem"> key={index}</div> */}
-            <Button
-              variant="info"
-              key={menulist._id}
-              onClick={(event) => this.addItem(event, menulist)}
-            >
-              Add
-            </Button>
           </Card.Body>
         </Card>
         // <div>
@@ -230,7 +233,7 @@ class orders extends React.Component {
     return (
       <>
         <Card className="container-checkout-receipt">
-          <h4 className="checkout-header">Receipt</h4>
+          <h4 className="checkout-header">Amount Paid</h4>
           <Card.Body className="checkout-body">
             <div className="subtotal">Subtotal: ${this.state.itemtotal}</div>
             <div className="tax">Tax: ${this.state.taxes}</div>
@@ -393,7 +396,7 @@ class orders extends React.Component {
         <div className="receipt-main-container">
           <div className="receipt-container">
             <div className="receipt">
-              <h4 className="receipt-head">Receipt</h4>
+              <h3>Receipt</h3>
               <p>Current Time : {this.state.curTime}</p>
             </div>
             {this.displayReceipt(this.state.cart)}
