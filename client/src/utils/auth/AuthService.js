@@ -13,7 +13,7 @@ export default class AuthService {
     const user = axios
       .post("api/login", { email: email, password: password })
       .then((res) => {
-        console.log(res);
+        console.log("Line 16", res);
         // set the token once the user logs in
         this.setToken(res.data.token);
         //this.setRole()

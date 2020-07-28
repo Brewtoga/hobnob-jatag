@@ -9,7 +9,7 @@ function Home() {
   const history = useHistory();
 
   const goToEditProfile = () => history.push("/order");
-
+  console.log("Line 12", user);
   return (
     <div className="Home">
       <Logo />
