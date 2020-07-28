@@ -76,21 +76,22 @@
 .receipt {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* background-color: maroon; */
-}
-
-.receipt-head {
-  display: flex;
-  /* background-color: mediumaquamarine; */
-  text-align: center;
 }
 
 .container-checkout-receipt {
   width: 400px;
   background-color: #1d1919;
   margin-top: 50px;
-  border-style: solid;
+  border-style: none;
   /* border-width: 2px; */
   /* border-color: white; */
+}
+
+/* Item with Button */
+.description-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 370px;
+  /* background-color: palegreen; */
 }
