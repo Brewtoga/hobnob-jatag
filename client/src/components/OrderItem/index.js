@@ -7,10 +7,10 @@ const showButtons = (isEdit) => {
     return (
       <div className="button-bank">
         <div className="item-button">
-          <Button variant="primary">Edit</Button>
+          <Button variant="info">Edit</Button>
         </div>
         <div className="item-button">
-          <Button variant="primary">Delete</Button>
+          <Button variant="info">Delete</Button>
         </div>
       </div>
     );
