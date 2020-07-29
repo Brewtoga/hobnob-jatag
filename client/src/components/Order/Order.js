@@ -184,7 +184,7 @@ class orders extends React.Component {
             <div className="total">Total: ${this.state.grandtotal}</div>
 
             <button
-              className="btn-remove"
+              className="btn-rad"
               onClick={() => this.setState({ display: true })}
             >
               Submit
@@ -396,7 +396,7 @@ class orders extends React.Component {
         <div className="receipt-main-container">
           <div className="receipt-container">
             <div className="receipt">
-              <h3>Receipt</h3>
+              <h4>Receipt</h4>
               <p>Current Time : {this.state.curTime}</p>
             </div>
             {this.displayReceipt(this.state.cart)}
@@ -405,12 +405,12 @@ class orders extends React.Component {
             <br></br>
             <div className="btn-container">
               <button
-                className="btn-remove"
+                className="btn-rad"
                 onClick={"http://localhost:3000/frontpage"}
               >
                 Print
               </button>
-              <button className="btn-remove">Email</button>
+              <button className="btn-rad">Email</button>
             </div>
           </div>
         </div>
