@@ -22,7 +22,7 @@ class orders extends React.Component {
       orderDetail: [],
       display: false,
       curTime: new Date().toLocaleString(),
-      exits:false,
+      exits: false,
     };
   }
 
@@ -72,7 +72,6 @@ class orders extends React.Component {
             </Button>
           </Card.Body>
         </Card>
-     
       );
     });
   };
@@ -99,10 +98,15 @@ class orders extends React.Component {
       this.setState({ cart: newcart });
       total = price + this.state.itemtotal;
       let t = this.state.tax * total;
-      this.state.taxes = t;
-      this.setState({ grandtotal: t + total });
+      this.state.taxes = Math.round(t * 100 + Number.EPSILON) / 100;
+      let grandtot = t + total;
+      grandtot.toFixed(2);
+      total.toFixed(2);
+      t = +t.toFixed(2);
+      console.log("t is", t);
+      this.setState({ grandtotal: grandtot });
       this.setState({ itemtotal: total });
-      this.setState({ taxes: t });
+      this.setState({ taxes: t.toFixed(2) });
       console.log(this.state.cart);
     }
   };
@@ -159,7 +163,7 @@ class orders extends React.Component {
     });
   };
   /////////////////////////////////////////// Dispaly price ///////////////////////////////////////
-  //  ///////////////////////////////////////////////////////////////////////////////////////////
+
   handleOrderDetails = () => {
     return (
       <>
@@ -332,23 +336,27 @@ class orders extends React.Component {
       });
     }
   };
-
+  ///////////////////////////////////     Print      ////////////////////////
+  print(e) {
+    e.preventDefault();
+    window.print();
+  }
   /////////////// render function    /////////////////////////////////////////////////
   render() {
     console.log("state:", this.state.cart);
-  //   if (this.state.exits !== false)
-  //   {
-  
-  //    return(
-  //     <>
-  //       <Logo />
-  //         <div>
-  //         {this.exists()}
-  //         </div>
-  //     </>
-  //   )
-     
-  // }
+    //   if (this.state.exits !== false)
+    //   {
+
+    //    return(
+    //     <>
+    //       <Logo />
+    //         <div>
+    //         {this.exists()}
+    //         </div>
+    //     </>
+    //   )
+
+    // }
     if (this.state.cart.length === 0) {
       return (
         <>
@@ -363,9 +371,7 @@ class orders extends React.Component {
           </div>
         </>
       );
-    }
- 
-  else if (this.state.display !== true) {
+    } else if (this.state.display !== true) {
       return (
         <>
           <Logo />
@@ -384,7 +390,6 @@ class orders extends React.Component {
           <div className="result">
             {this.handleOrderDetails(this.state.cart)}
           </div>
-          
         </>
       );
     }
@@ -402,22 +407,14 @@ class orders extends React.Component {
 
             <br></br>
             <div className="btn-container">
-              <button
-                className="btn-remove"
-                onClick={"http://localhost:3000/frontpage"}
-              >
+              <button className="btn-remove" onClick={(e) => this.print(e)}>
                 Print
               </button>
-              <button className="btn-remove">Email</button>
-            </div>
+              </div>
           </div>
         </div>
       </>
     );
   }
-   
-  
- 
-  
 }
 export default orders;
