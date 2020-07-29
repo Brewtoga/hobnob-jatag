@@ -396,7 +396,7 @@ class orders extends React.Component {
         <div className="receipt-main-container">
           <div className="receipt-container">
             <div className="receipt">
-              <h3>Receipt</h3>
+              <h4>Receipt</h4>
               <p>Current Time : {this.state.curTime}</p>
             </div>
             {this.displayReceipt(this.state.cart)}

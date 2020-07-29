@@ -8,8 +8,12 @@
   /* background-color: lightslategray; */
 }
 
+.add-btn {
+}
+
 .btn-input {
   /* background-color: #1d1919; */
+  color: black;
   width: 110px;
 }
 
@@ -81,6 +85,8 @@
 .receipt {
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
+  /* background-color: red; */
 }
 
 .container-checkout-receipt {
@@ -95,6 +101,7 @@
 /* Item with Button */
 .description-container {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   width: 370px;

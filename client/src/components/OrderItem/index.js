@@ -17,8 +17,8 @@ const showButtons = (isEdit) => {
   } else {
     return (
       <div>
-        {/* <Button variant="primary">Customize</Button> */}
-        {/* <Button variant="primary" onClick={Orderfunction.addItem(event,item)}>Add to Cart</Button> */}
+        {/* <Button variant="">Customize</Button> */}
+        {/* <Button variant="" onClick={Orderfunction.addItem(event,item)}>Add to Cart</Button> */}
       </div>
     );
   }

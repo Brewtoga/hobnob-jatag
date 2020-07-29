@@ -111,6 +111,10 @@ button:focus {
 }
 
 /* Sign Up Page */
+.signup-btn {
+  display: flex;
+  justify-content: flex-end;
+}
 /* Admin Page */
 .admin-header {
   text-align: center;
