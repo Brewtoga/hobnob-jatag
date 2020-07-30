@@ -1,20 +1,10 @@
-/* .container-location {
-  margin-top: 80px;
-} */
-
 .location-description {
   text-align: left;
 }
 
 .map {
   background-color: initial;
-  /* z-index: 10; */
 }
-
-/* .location {
-  display: flex;
-  margin-top: 50px;
-} */
 
 .row {
   align-items: flex-start;

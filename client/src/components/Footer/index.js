@@ -9,7 +9,11 @@ function Footer() {
       <p className="powered">Powered JATAG</p>
 
       <div className="icon">
-        <a className="links" target="_blank" href={"https://www.facebook.com/"}>
+        <a
+          className="links"
+          target="_blank"
+          href={"https://www.facebook.com/r.php"}
+        >
           <FaFacebook />
         </a>
         <a
