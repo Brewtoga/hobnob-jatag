@@ -1,5 +1,15 @@
+.container-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .res-head {
   text-align: left;
+}
+
+.bullet-container {
+  width: 750px;
 }
 
 .book-container {
