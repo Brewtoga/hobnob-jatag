@@ -2,9 +2,9 @@
     {
         "orderId": 30240,
         "orderStatus": true,
-        "orderItemsLength": orderItemsLength,
+        "orderItemsLength": 4,
         "orderTotalCost": "$38.96"
-        "orderItems": ([
+        "orderItems": {
             {
                 "menuItemName": "Hobnob Cob (V, GF)",
                 "type": "starter",
@@ -27,14 +27,14 @@
                 "price" : "$14",
                 "quantity" : 2
             }
-        ])
+        }
     },
     {
         "orderId": 30241,
         "orderStatus": false,
-        "orderItemsLength": orderItemsLength,
+        "orderItemsLength": 3,
         "orderTotalCost": "$38.96"
-        "orderItems": ([
+        "orderItems": [
             {
                 "menuItemName" : "New York Strip for Two",
                 "type" : "entrees",
@@ -57,13 +57,13 @@
                 "price" : "$27",
                 "quantity" : 1
             }
-        ])
+        ]
     },
     
     {
         "orderId": 30242,
         "orderStatus": true,
-        "orderItemsLength": orderItemsLength,
+        "orderItemsLength": 2,
         "orderTotalCost": "$38.96"
         "orderItems": ([
             {
@@ -85,7 +85,7 @@
     {
         "orderId": 30243,
         "orderStatus": false,
-        "orderItemsLength": orderItemsLength,
+        "orderItemsLength": 3,
         "orderTotalCost": "$38.96"
         "orderItems": ([
             {
@@ -114,7 +114,7 @@
     {
         "orderId": 30244,
         "orderStatus": true,
-        "orderItemsLength": orderItemsLength,
+        "orderItemsLength": 3,
         "orderTotalCost": "$38.96"
         "orderItems": ([
             {
@@ -143,7 +143,7 @@
     {
         "orderId": 30245,
         "orderStatus": true,
-        "orderItemsLength": orderItemsLength,
+        "orderItemsLength": 3,
         "orderTotalCost": "$38.96"
         "orderItems": ([
             {
