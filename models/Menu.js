@@ -13,12 +13,8 @@ const menuSchema = new Schema({
   isSpecial: {
     type: Boolean,
   },
-  image: {
-    type: String,
-    required: true,
-  },
   ingredients: {
-    type: String,
+    type: Array,
     required: true,
   },
   price: {
@@ -26,7 +22,7 @@ const menuSchema = new Schema({
     required: true,
   },
   addIngredients: {
-    type: String,
+    type: Array,
     required: false,
   },
   specialPrice: {
@@ -34,7 +30,7 @@ const menuSchema = new Schema({
     required: false,
   },
   removeIngredients: {
-    type: String,
+    type: Array,
     required: false,
   },
   createdAt: {

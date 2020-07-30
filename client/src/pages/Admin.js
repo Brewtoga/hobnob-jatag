@@ -1,10 +1,11 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+import { Link, StaticRouter } from "react-router-dom";
 import { useAuth } from "../utils/auth";
-import { Button, Container, Row, Col, Grid, Form } from "react-bootstrap";
+import { Button, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
 import Logo from "../components/Logo";
 import OrderItem from "../components/OrderItem";
+
 function Admin() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ function Admin() {
   const [showEditItem, setShowEditItem] = useState(false);
   const [menuItems, setMenuItems] = useState([]);
   const [inputFields, setInputFields] = useState([{ Ingredient: "" }]);
-
+  const [selection, setSelection] = useState("Menu Type")
   useEffect(() => {
     API.getUser(user.id).then((res) => {
       setUsername(res.data.username);
@@ -23,6 +24,9 @@ function Admin() {
       setRole(res.data.role);
     });
   }, [user]);
+
+  // ============= Buttons ================
+
   const createMenuItem = () => {
     setShowEditItem(false);
     setShowViewOrders(false);
@@ -39,38 +43,23 @@ function Admin() {
     setShowEditItem(true);
     API.getMenu().then((res) => {
       setMenuItems(res.data.Menu);
-      console.log(res.data.Menu);
-      console.log("testing testing");
     });
   };
+  // ***************** Actions **********************
+  const dropdownSelection = (event) => {
+    selection = "STARTER";
+    return selection;
+  }
+  /* const postNewMenuItem = (data) => {
+    API.postMenuItem()
+      .then((res) => {
+        history.replace("/admin");
+      })
+      .catch((err) => alert(err));
 
-  const handleAddFields = () => {
-    const values = [...inputFields];
-    values.push({ ingredient: "" });
-    setInputFields(values);
-  };
+  }  */
 
-  const handleRemoveFields = (index) => {
-    const values = [...inputFields];
-    values.splice(index, 1);
-    setInputFields(values);
-  };
-
-  const handleInputChange = (index, event) => {
-    const values = [...inputFields];
-    if (event.target.name === "ingredient") {
-      values[index].firstName = event.target.value;
-    }
-
-    setInputFields(values);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("inputFields", inputFields);
-  };
-
-  const postNewMenuItem = () => {};
+  // ***************** Dispay ***********************
 
   return (
     <div>
@@ -112,53 +101,46 @@ function Admin() {
             <Form.Row>
               <Form.Group as={Col} controlId="formMenuItem">
                 <Form.Label>Menu Item</Form.Label>
-                <Form.Control
-                  type="menuItemName"
-                  placeholder="Menu Item Name"
-                />
+                <Form.Control type="menuItemName" placeholder="Menu Item Name" />
               </Form.Group>
-
               <Form.Group as={Col} controlId="formMenuItemPrice">
                 <Form.Label>Price</Form.Label>
                 <Form.Control type="price" placeholder="Price" />
               </Form.Group>
             </Form.Row>
-            <form>
-              <div className="form-row">
-                {inputFields.map((inputField, index) => (
-                  <Fragment key={`${inputField}~${index}`}>
-                    <div className="form-group col-sm-8">
-                      <label htmlFor="ingredient">Ingredient</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="ingredient"
-                        name="ingredient"
-                        value={inputField.ingredient}
-                        onChange={(event) => handleInputChange(index, event)}
-                      />
-                    </div>
-
-                    <div className="form-group col-sm-2">
-                      <button
-                        className="btn btn-link"
-                        type="button"
-                        onClick={() => handleRemoveFields(index)}
-                      >
-                        -
-                      </button>
-                      <button
-                        className="btn btn-link"
-                        type="button"
-                        onClick={() => handleAddFields()}
-                      >
-                        +
-                      </button>
-                    </div>
-                  </Fragment>
-                ))}
-              </div>
-            </form>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formMenuItemType">
+                <Dropdown>
+                  <Dropdown.Toggle variant="info" id="dropdownMenuItemType">{selection}</Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">STARTERS</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">ENTREES</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">SANDWICHES</Dropdown.Item>
+                    <Dropdown.Item href="#/action-4">SIDES</Dropdown.Item>
+                    <Dropdown.Item href="#/action-5">DESSERT</Dropdown.Item>
+                    <Dropdown.Item href="#/action-6">BOTTLES AND CANS</Dropdown.Item>
+                    <Dropdown.Item href="#/action-7">COCKTAILS</Dropdown.Item>
+                    <Dropdown.Item href="#/action-8">WINE BY THE BOTTLE</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Form.Group>
+              <Form.Group as={Col} controlId="formMenuItemSpecialPrice">
+                <Form.Label>Special Price</Form.Label>
+                <Form.Control type="specialPrice" placeholder="Price when on Special" />
+              </Form.Group>
+            </Form.Row>
+            <Form.Group as={Col} controlId="formMenuItemIngredients">
+              <Form.Label>Ingredients</Form.Label>
+              <Form.Control type="ingredients" placeholder="Seperate each ingredient with a comma." />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formMenuItemRemoveIngredients">
+              <Form.Label>Ingredients that can be removed</Form.Label>
+              <Form.Control type="removeIngredients" placeholder="Seperate ingredients with comma." />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formMenuItemAddIngredients">
+              <Form.Label>Ingredients that can be added</Form.Label>
+              <Form.Control type="addIngredients" placeholder="Seperate ingredients with comma." />
+            </Form.Group>
             <Form.Group id="formIsSpecial">
               <Form.Check type="checkbox" label="I'm on special" />
             </Form.Group>
