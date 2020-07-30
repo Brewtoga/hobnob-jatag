@@ -14,8 +14,7 @@ export default {
   // },
   getRole: (id) => {
     const user = axios.get(`/api/user/${id}`);
-    console.log(user);
-    return (user.role, user.username)
+    return (user.role, user.username);
   },
 
   // sign up a user to our service
@@ -59,7 +58,7 @@ export default {
         return axios.post("/api/order", {
           price: data.price,
           menuItemName: data.menuItemName,
-          quantity:data.qty,
+          quantity: data.qty,
           tax: tax,
           grandTotal: total,
         });

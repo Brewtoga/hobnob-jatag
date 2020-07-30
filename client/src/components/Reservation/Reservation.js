@@ -14,14 +14,14 @@ function Reservation() {
     <div>
       <Logo />
       <div className="container-reservation">
-        <p>
+        <p className="res-head">
           PLEASE NOTE: With the rapidly changing nature of events related to
           COVID-19, we can not anticipate how long our patio and dining room
           will remain closed. WE ARE CURRENTLY NOT ACCEPTING RESERVATIONS.
         </p>
         <p>
-          We are a small restaurant with limited seating. Click the red “Book
-          Now RESY” button below to make a reservation.
+          We are a small restaurant with limited seating. Click the blue “Book
+          Now” button below to make a reservation.
         </p>
         <ul>
           Here’s the inside scoop:
@@ -68,9 +68,9 @@ function Reservation() {
             </strong>
           </li>
         </ul>
-        <div>
+        <div className="book-container">
           <button className="btn-rad" onClick={handleShow}>
-            Book Now RESY
+            Book Now
           </button>
           <ResMod show={show} handleClose={handleClose} />
         </div>

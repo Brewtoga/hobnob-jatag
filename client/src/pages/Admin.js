@@ -144,7 +144,7 @@ function Admin() {
             <Form.Group id="formIsSpecial">
               <Form.Check type="checkbox" label="I'm on special" />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick="postNewMenuItem">
+            <Button variant="info" type="submit" onClick="postNewMenuItem">
               Submit
             </Button>
           </Form>
