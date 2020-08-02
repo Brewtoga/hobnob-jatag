@@ -5,6 +5,7 @@ import { useAuth } from "../utils/auth";
 import { Button, Container, Row, Col, Form, Dropdown } from "react-bootstrap";
 import Logo from "../components/Logo";
 import OrderItem from "../components/OrderItem";
+import OrderStatus from "../components/OrderStatus";
 
 function Admin() {
   const [username, setUsername] = useState("");
@@ -169,7 +170,7 @@ function Admin() {
             </div>
           )}
         </div>
-        {showViewOrders && <div>show orders here.</div>}
+        {showViewOrders && <OrderStatus />}
       </Container>
     </div>
   );

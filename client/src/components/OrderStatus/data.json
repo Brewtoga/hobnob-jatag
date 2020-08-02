@@ -3,8 +3,8 @@
         "orderId": 30240,
         "orderStatus": true,
         "orderItemsLength": 4,
-        "orderTotalCost": "$38.96"
-        "orderItems": {
+        "orderTotalCost": "$50.40",
+        "orderItems": [
             {
                 "menuItemName": "Hobnob Cob (V, GF)",
                 "type": "starter",
@@ -27,13 +27,13 @@
                 "price" : "$14",
                 "quantity" : 2
             }
-        }
+        ]
     },
     {
         "orderId": 30241,
         "orderStatus": false,
         "orderItemsLength": 3,
-        "orderTotalCost": "$38.96"
+        "orderTotalCost": "$78.75",
         "orderItems": [
             {
                 "menuItemName" : "New York Strip for Two",
@@ -64,8 +64,8 @@
         "orderId": 30242,
         "orderStatus": true,
         "orderItemsLength": 2,
-        "orderTotalCost": "$38.96"
-        "orderItems": ([
+        "orderTotalCost": "$65.10",
+        "orderItems": [
             {
                 "menuItemName" : "Crab Cakes for Two",
                 "type" : "entrees",
@@ -80,14 +80,14 @@
                 "price" : "$27",
                 "quantity" : 1
             }
-        ])
+        ]
     },
     {
         "orderId": 30243,
         "orderStatus": false,
         "orderItemsLength": 3,
-        "orderTotalCost": "$38.96"
-        "orderItems": ([
+        "orderTotalCost": "$54.60",
+        "orderItems": [
             {
                 "menuItemName" : "Strawberry Goat Cheese Salad (V, GF)",
                 "type" : "starter",
@@ -101,7 +101,7 @@
                 "ingredients" : "Homemade eggplant parmesan, tomato sauce, grated parmesan, mozzarella",
                 "price" : "$15",
                 "quantity" : 1
-            }
+            },
             {
                 "menuItemName" : "Roblar Chardonnay",
                 "type" : "wineByTheBottle",
@@ -109,14 +109,14 @@
                 "price" : "$27",
                 "quantity" : 1
             }
-        ])
+        ]
     },
     {
         "orderId": 30244,
         "orderStatus": true,
         "orderItemsLength": 3,
-        "orderTotalCost": "$38.96"
-        "orderItems": ([
+        "orderTotalCost": "$54.60",
+        "orderItems": [
             {
                 "menuItemName" : "Strawberry Goat Cheese Salad (V, GF)",
                 "type" : "starter",
@@ -130,7 +130,7 @@
                 "ingredients" : "Homemade eggplant parmesan, tomato sauce, grated parmesan, mozzarella",
                 "price" : "$15",
                 "quantity" : 1
-            }
+            },
             {
                 "menuItemName" : "Roblar Chardonnay",
                 "type" : "wineByTheBottle",
@@ -138,14 +138,14 @@
                 "price" : "$27",
                 "quantity" : 1
             }
-        ])
+        ]
     },
     {
         "orderId": 30245,
         "orderStatus": true,
         "orderItemsLength": 3,
-        "orderTotalCost": "$38.96"
-        "orderItems": ([
+        "orderTotalCost": "$54.60",
+        "orderItems": [
             {
                 "menuItemName": "Hobnob Cob (V, GF)",
                 "type": "starter",
@@ -159,7 +159,7 @@
                 "ingredients" : "Homemade eggplant parmesan, tomato sauce, grated parmesan, mozzarella",
                 "price" : "$15",
                 "quantity" : 1
-            }
+            },
             {
                 "menuItemName" : "Roblar Chardonnay",
                 "type" : "wineByTheBottle",
@@ -167,12 +167,8 @@
                 "price" : "$27",
                 "quantity" : 1
             }
-        ])
+        ]
     }
 
     
 ]
-
-
-
-
